@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>כרטיסי תרגול · כתיבה ממזגת</title>
+<style>
+:root { --bg: #ffffff; --ink: #1d2733; --muted: #5b6776; --line: #9aa6b2; --accent: #2f7d5b; --soft: #f0efe8; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #14181d; --ink: #e8ecf0; --muted: #9aa6b2; --line: #4a5560; --accent: #5cc496; --soft: #232a31; }
+}
+:root[data-theme="dark"] { --bg: #14181d; --ink: #e8ecf0; --muted: #9aa6b2; --line: #4a5560; --accent: #5cc496; --soft: #232a31; }
+body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--ink); font: 16px/1.6 Arial, sans-serif; }
+.wrap { max-width: 900px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; color: var(--accent); }
+.note { color: var(--muted); margin: 0 0 18px; }
+.warn { font-weight: 700; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.card { border: 2px dashed var(--line); border-radius: 12px; padding: 14px 16px; break-inside: avoid; }
+.card h2 { font-size: 17px; margin: 0 0 6px; }
+.card .src { font-size: 13px; color: var(--muted); margin: 0 0 8px; }
+.card p { margin: 4px 0; }
+.card .tag { display: inline-block; font-size: 12px; font-weight: 700; background: var(--soft); border-radius: 6px; padding: 1px 8px; }
+.bank { margin-top: 22px; border: 2px solid var(--accent); border-radius: 12px; padding: 14px 16px; break-inside: avoid; }
+.bank h2 { font-size: 17px; margin: 0 0 6px; }
+.bank ul { margin: 0; padding-right: 20px; }
+.flow { margin-top: 28px; border-top: 2px solid var(--line); padding-top: 14px; }
+.flow h2 { font-size: 18px; color: var(--accent); margin: 0 0 6px; }
+@media print { .flow { break-before: page; border: 0; } body { padding: 0; background: #fff; color: #000; } .card { border-color: #777; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>כרטיסי תרגול: מסיכום למיזוג</h1>
+  <p class="note"><span class="warn">המאמרים כאן בדיוניים, לתרגול בלבד.</span> לא מצטטים אותם בעבודה. גוזרים לאורך הקו המקווקו: כרטיס לכל מאמר.</p>
+
+  <div class="cards">
+    <div class="card">
+      <h2>מאמר א</h2>
+      <p class="src">לוין ושות׳ (2021) · בדיוני · <span class="tag">מחקרי</span></p>
+      <p><b>מה בדקו:</b> כלורלה בתרביות מעבדה במשך 14 יום, תחת אור כחול או אור אדום, באותה עוצמה.</p>
+      <p><b>מה מצאו:</b> תחת אור אדום הביומסה הייתה גבוהה ב-30% מאשר תחת אור כחול.</p>
+    </div>
+    <div class="card">
+      <h2>מאמר ב</h2>
+      <p class="src">פארק וקים (2022) · בדיוני · <span class="tag">מחקרי</span></p>
+      <p><b>מה בדקו:</b> כלורלה במעבדה במשך 21 יום, תחת אור כחול או אור אדום.</p>
+      <p><b>מה מצאו:</b> אור אדום הגביר את קצב הגדילה. אור כחול הגביר את תכולת הכלורופיל ואת גודל התאים.</p>
+    </div>
+    <div class="card">
+      <h2>מאמר ג</h2>
+      <p class="src">אורטיז (2023) · בדיוני · <span class="tag">מחקרי</span></p>
+      <p><b>מה בדקו:</b> כלורלה במעבדה, תחת אור אדום בלבד או תחת שילוב של אדום וכחול.</p>
+      <p><b>מה מצאו:</b> שילוב של אדום וכחול, ביחס של 3:1, נתן ביומסה גבוהה ב-15% מאור אדום בלבד.</p>
+    </div>
+    <div class="card">
+      <h2>מאמר ד</h2>
+      <p class="src">חדאד (2024) · בדיוני · <span class="tag">מחקרי</span></p>
+      <p><b>מה בדקו:</b> כלורלה במעבדה, תחת אור כחול או אדום, בשתי עוצמות אור.</p>
+      <p><b>מה מצאו:</b> בעוצמה נמוכה אור אדום עדיף. בעוצמה גבוהה אין הבדל בין הצבעים.</p>
+    </div>
+    <div class="card">
+      <h2>מאמר ה</h2>
+      <p class="src">צ׳ן ושות׳ (2022) · בדיוני · <span class="tag">סקירה</span></p>
+      <p><b>מה בדקו:</b> סקירה של 40 מחקרים על השפעת האור על אצות חד-תאיות.</p>
+      <p><b>מה מצאו:</b> כמעט כל המחקרים נעשו במעבדה, בטמפרטורה ובתאורה קבועות. מחקרים בחממה, באור טבעי, כמעט אין.</p>
+    </div>
+  </div>
+
+  <div class="bank">
+    <h2>משפטי קישור</h2>
+    <ul>
+      <li><b>הסכמה:</b> כמה מחקרים מצאו ש... (א, 2021; ב, 2022). · בדומה לכך, ...</li>
+      <li><b>הבדל או סתירה:</b> לעומת זאת, ... · ממצאים אלה אינם עקביים: ...</li>
+      <li><b>הסבר להבדל:</b> ייתכן שההבדל נובע מ... (השיטה, משך הניסוי, עוצמת האור).</li>
+      <li><b>פער:</b> עם זאת, עדיין לא נבדק... · כל המחקרים האלה נעשו ב..., ולכן לא ידוע אם...</li>
+      <li><b>קשר למחקר שלי:</b> לכן, במחקר זה נבדק...</li>
+    </ul>
+  </div>
+
+  <div class="flow">
+    <h2>למנחה: מהלך התרגול (בערך 25 דקות)</h2>
+    <p>מדפיסים את העמוד הראשון, עותק לכל זוג, וגוזרים את הכרטיסים.</p>
+    <ol>
+      <li><b>כמו שרגילים (5 דק׳):</b> כל זוג כותב פסקה אחת מחמשת הכרטיסים, בלי הסבר מראש. כמעט תמיד יוצאת פסקה "מאמר אחרי מאמר".</li>
+      <li><b>מיון (7 דק׳):</b> מזיזים את הכרטיסים לערימות לפי <b>רעיון</b>, לא לפי מאמר: מה מסכים, מה סותר, ומה אף אחד לא בדק. כרטיס יכול להיות ביותר מערימה אחת.</li>
+      <li><b>כתיבה שנייה (8 דק׳):</b> משפט טענה לכל ערימה, ואחריו הראיות עם הפניות. משתמשים במשפטי הקישור.</li>
+      <li><b>השוואה (5 דק׳):</b> מבחן המרקר על שתי הפסקאות. צובעים כל משפט בצבע של המקור שלו: בראשונה הצבעים באים בתור, ובשנייה הם מתערבבים. שואלים: איזה משפט בשנייה הוא שלכם בלבד? (הטענה, ההשוואה והפער.)</li>
+    </ol>
+    <p><b>הקשר לעבודה:</b> הערימות הן בדיוק עמודת "תת-נושא" במטריצת המקורות. בפגישה הבאה עושים את אותו מיון על המטריצה של התלמיד/ה. ההסבר המלא נמצא במדריך, בסעיף "סקירת ספרות, צעד אחר צעד".</p>
+  </div>
+</div>
+</body>
+</html>

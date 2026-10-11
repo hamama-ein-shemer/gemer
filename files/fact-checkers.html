@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מפגש · בודקי עובדות</title>
+<style>
+:root { --bg: #ffffff; --ink: #1d2733; --muted: #5b6776; --line: #9aa6b2; --accent: #2f7d5b; --soft: #f0efe8; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #14181d; --ink: #e8ecf0; --muted: #9aa6b2; --line: #4a5560; --accent: #5cc496; --soft: #232a31; }
+}
+:root[data-theme="dark"] { --bg: #14181d; --ink: #e8ecf0; --muted: #9aa6b2; --line: #4a5560; --accent: #5cc496; --soft: #232a31; }
+body { margin: 0; padding: 24px 16px; background: var(--bg); color: var(--ink); font: 16px/1.6 Arial, sans-serif; }
+.wrap { max-width: 900px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 0 0 4px; color: var(--accent); }
+h2 { font-size: 18px; color: var(--accent); margin: 22px 0 6px; }
+.meta { background: var(--soft); border-radius: 12px; padding: 12px 16px; margin: 12px 0; }
+.meta p { margin: 2px 0; }
+.board { border: 2px dashed var(--line); border-radius: 12px; padding: 8px 14px; display: inline-block; font-weight: 700; }
+ol li, ul li { margin: 4px 0; }
+.back { font-size: 14px; }
+a { color: var(--accent); }
+@media print { body { padding: 0; background: #fff; color: #000; } .back { display: none; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="back"><a href="../mentors.html">← לדף המנחים</a></p>
+  <h1>מפגש: בודקי עובדות (לקבוצת המתקדמים)</h1>
+  <div class="meta">
+    <p><b>משך:</b> בערך 25 דקות, ואחר כך זמן עבודה.</p>
+    <p><b>מטרה:</b> להבין, מתוך התנסות, שאפשר לקרוא בעזרת בינה רק אם בודקים אותה. ולעשות את הצעד הראשון ממטריצה לכתיבה ממזגת.</p>
+    <p><b>מה יוצא מהמפגש:</b> שורות אמיתיות במטריצה, ופרומפטים לנספח. אין מטלה נוספת.</p>
+  </div>
+
+  <h2>הכנה</h2>
+  <ul>
+    <li>כל תלמיד/ה מביא/ה <b>PDF של מאמר אחד מההצעה</b>, ופותח/ת עותק של המטריצה. הקישור <a href="../review.html#step-4" target="_blank" rel="noopener">בדף "סקירת ספרות", צעד 4</a>.</li>
+    <li>גישה ל-NotebookLM או ל-Gemini. מי שעובד/ת בכלי אחר יכול/ה להמשיך בו.</li>
+    <li>על הלוח: <span class="board">✓ כתוב במאמר · ✗ לא כתוב · ~ פושט מדי או עוגל</span></li>
+  </ul>
+
+  <h2>מהלך</h2>
+  <ol>
+    <li><b>פתיחה (2 דק׳):</b> "בינה יכולה לקרוא איתכם 20 מאמרים. השאלה היא איך יודעים שמה שהיא אמרה באמת כתוב שם."</li>
+    <li><b>הבינה ממלאת (5 דק׳):</b> מעלים את ה-PDF ומריצים את הפרומפט "טיוטה לשורה במטריצה" מהמדריך, עם ציטוטים. את הפרומפט מעתיקים מיד לנספח הפרומפטים.</li>
+    <li><b>ציד (8 דק׳):</b> מאמתים כל תא מול ה-PDF (Ctrl+F על הציטוט, ואז את המספרים מול האיור או הטבלה), ומסמנים ✓, ✗ או ~. מה שתוקן נכנס לעמודה "מה תיקנתי".</li>
+    <li><b>זוגות (4 דק׳):</b> מה הבינה פספסה או "החליקה"? אוספים על הלוח את סוגי הטעויות: מספר מעוגל, טיפולים שהתחלפו, מסקנה שלא כתובה, פרט שהשלימה מעצמה.</li>
+    <li><b>רק אתם (3 דק׳):</b> כותבים לבד את "מה מצאו, במילים שלי" ואת "הקשר למחקר שלי".</li>
+    <li><b>צעד למתקדמים (3 דק׳ ועוד, בזמן העבודה):</b> מי שיש לו/ה כבר 3 שורות באותו תת-נושא כותב/ת <b>משפט טענה אחד</b> שמאחד אותן: הסכמה, סתירה או פער. זה הגרעין של פסקה ממזגת. אפשר להיעזר בפרומפט "הסכמות, סתירות ופערים" ב-NotebookLM, אבל את המשפט כותבים בעצמם.</li>
+  </ol>
+
+  <h2>לסיום, שאלה אחת לכיתה</h2>
+  <p>"מה הייתם כותבים בעבודה אילו לא הייתם בודקים?" זה מה שהבוחן בשיחת ההגנה ישאל עליו.</p>
+
+  <h2>אחרי המפגש</h2>
+  <ul>
+    <li>הקצב: שני מאמרים בשבוע. המנחים בודקים את המטריצה בפגישה השבועית (<a href="../mentors.html#mentors">בדף המנחים</a>).</li>
+    <li>כשמגיעים לכתיבה: בודק הסקירה (Gem) על כל פסקה.</li>
+  </ul>
+</div>
+</body>
+</html>
