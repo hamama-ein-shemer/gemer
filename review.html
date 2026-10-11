@@ -59,9 +59,24 @@ nav.toc .wrap.nav-row { overflow: visible; align-items: center; }
 .nav-pick { display: flex; gap: 6px; flex: none; padding-inline-end: 8px; border-inline-end: 1px solid var(--line); }
 .nav-pick select { font: inherit; font-size: 15px; font-weight: 700; color: var(--accent); background: var(--surface); border: 1.5px solid var(--accent); border-radius: 999px; padding: 4px 10px; cursor: pointer; max-width: 9.5em; }
 .nav-pick select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.nav-links { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; min-width: 0; flex: 1; }
+.nav-links { display: flex; flex-wrap: wrap; gap: 2px 4px; min-width: 0; flex: 1; }
+.nav-links a[aria-current="true"], .nav-panel a[aria-current="true"] { background: color-mix(in srgb, var(--sec) 16%, var(--surface)); color: var(--ink); font-weight: 700; }
+/* בטלפון: במקום שורת קישורים שלא רואים את כולה, כפתור "איפה אני" שפותח את כל המקטעים */
+.nav-menu-btn { display: none; align-items: center; gap: 6px; min-width: 0; flex: 1; font: inherit; font-size: 15px; font-weight: 700; color: var(--ink); background: var(--surface); border: 1.5px solid var(--line); border-radius: 999px; padding: 4px 12px; cursor: pointer; }
+.nav-menu-btn .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--cur, var(--muted)); flex: none; }
+.nav-menu-btn .cur { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.nav-menu-btn .chev { margin-inline-start: auto; color: var(--muted); transition: transform .15s; }
+.nav-menu-btn[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.nav-panel { position: absolute; inset-inline: 0; top: 100%; background: var(--surface); border-bottom: 1px solid var(--line); box-shadow: 0 10px 24px rgb(0 0 0 / .14); }
+nav.toc .nav-panel .wrap { overflow: visible; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding-top: 10px; padding-bottom: 12px; }
+nav.toc .nav-panel a { font-size: 16px; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); color: var(--ink); white-space: normal; }
+@media (max-width: 760px) {
+  .nav-links { display: none; } .nav-menu-btn { display: inline-flex; min-width: 7.5em; }
+  .nav-pick { gap: 4px; padding-inline-end: 6px; } .nav-pick select { font-size: 14px; padding: 4px 6px; }
+}
+@media (min-width: 761px) { .nav-panel { display: none; } }
 
-section { padding: 28px 0 8px; scroll-margin-top: 56px; }
+section { padding: 28px 0 8px; scroll-margin-top: calc(var(--nav-h, 50px) + 6px); }
 h2 { font-size: 26px; margin: 0 0 12px; font-weight: 800; }
 h3 { font-size: 19px; margin: 22px 0 8px; }
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
