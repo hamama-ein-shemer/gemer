@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מהלך הניסוי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #faf7f0; --card: #ffffff; --ink: #2e3a33; --muted: #5f6e64; --line: #d5ddd6; --accent: #2f6b4f; --soft: #eef4ec;
+  --ok: #d9eed5; --okInk: #24613f; --bad: #fbe1d6; --badInk: #a2482a; --butter: #fbf0c9; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151a17; --card: #1d2420; --ink: #e6ece7; --muted: #a3b0a7; --line: #39443d; --accent: #8fd1a6; --soft: #233029;
+    --ok: #1f3a2a; --okInk: #9be0b4; --bad: #43281f; --badInk: #f3b39b; --butter: #3a3420; }
+}
+:root[data-theme="dark"] { --bg: #151a17; --card: #1d2420; --ink: #e6ece7; --muted: #a3b0a7; --line: #39443d; --accent: #8fd1a6; --soft: #233029;
+  --ok: #1f3a2a; --okInk: #9be0b4; --bad: #43281f; --badInk: #f3b39b; --butter: #3a3420; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 60px; background: var(--bg); color: var(--ink); font: 17px/1.65 Rubik, Arial, sans-serif; }
+.wrap { max-width: 860px; margin: 0 auto; }
+h1 { font-size: 26px; margin: 0 0 6px; color: var(--accent); }
+h2 { font-size: 22px; color: var(--accent); margin: 40px 0 10px; padding-top: 8px; border-top: 2px solid var(--line); }
+h3 { font-size: 19px; margin: 22px 0 8px; } h4 { font-size: 18px; margin: 6px 0 10px; }
+a { color: var(--accent); }
+.small { font-size: 14px; } .muted { color: var(--muted); }
+.lead { background: var(--soft); border-radius: 14px; padding: 12px 16px; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+nav.toc a { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; text-decoration: none; font-size: 15px; }
+.q { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 14px 16px; margin: 12px 0; }
+.qn { margin: 0; font-size: 14px; color: var(--muted); }
+.show { margin: 8px 0 12px; }
+.show img { display: block; max-width: 100%; height: auto; margin: 0 auto; background: #fff; border-radius: 10px; }
+.show.imgs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.show.imgs figure { margin: 0; position: relative; }
+.show.imgs figcaption { position: absolute; top: 6px; inset-inline-start: 6px; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); font-weight: 700; }
+.quote { background: var(--soft); border-radius: 10px; padding: 8px 12px; margin: 6px 0; }
+.opts { display: grid; gap: 8px; }
+.opts button { display: flex; gap: 10px; align-items: center; text-align: start; width: 100%; font: inherit; color: var(--ink);
+  background: var(--card); border: 2px solid var(--line); border-radius: 12px; padding: 8px 12px; cursor: pointer; }
+.opts button:hover:not(:disabled) { border-color: var(--accent); }
+.opts .let { flex: none; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); font-weight: 700; }
+.opts button.right { background: var(--ok); border-color: var(--okInk); }
+.opts button.wrong { background: var(--bad); border-color: var(--badInk); }
+.why { margin-top: 12px; padding: 12px 14px; background: var(--soft); border-radius: 12px; }
+.why .verdict { font-weight: 700; margin-top: 0; }
+.score { position: sticky; top: 0; z-index: 2; background: var(--bg); padding: 8px 0; font-weight: 600; color: var(--accent); }
+.discuss { margin: 10px 0; background: var(--butter); border-radius: 10px; padding: 8px 12px; }
+.note { background: var(--butter); border-radius: 12px; padding: 8px 14px; margin: 10px 0; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 14px; margin: 10px 0; }
+.box summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+.steps { padding-inline-start: 22px; } .steps li { margin: 8px 0; } .steps li span { display: block; font-size: 15px; }
+.shots { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin: 8px 0 14px; }
+.shot { margin: 0; flex: 1 1 240px; max-width: 420px; }
+.shot img { display: block; max-width: 100%; max-height: 380px; height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+.shot figcaption { font-size: 14px; color: var(--muted); text-align: center; margin-top: 4px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.card { display: flex; flex-direction: column; gap: 4px; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 14px; }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 15px; }
+caption { text-align: start; font-weight: 700; padding: 4px 0; }
+th { background: #4e8f67; color: #fff; font-weight: 600; } th, td { border: 1px solid var(--line); padding: 5px 8px; text-align: start; }
+.check { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 16px; margin: 10px 0; }
+.check label { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; }
+.check input { margin-top: 6px; width: 18px; height: 18px; flex: none; }
+.fx { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 8px 14px; margin: 10px 0; }
+.fx p { margin: 4px 0; }
+.fxrow { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.fxrow code { flex: 1 1 260px; background: var(--soft); border-radius: 8px; padding: 6px 10px; font: 15px/1.4 Consolas, "Courier New", monospace; overflow-wrap: anywhere; }
+.fxrow code[dir="ltr"] { text-align: left; } .fxrow code[dir="rtl"] { font-family: Rubik, Arial, sans-serif; }
+.copy { font: inherit; font-size: 15px; color: var(--ink); background: var(--butter); border: 1px solid var(--line); border-radius: 999px; padding: 4px 14px; cursor: pointer; }
+@media print { .score, nav.toc { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="small"><a href="../index.html">← למדריך לעבודת הגמר</a></p>
+  <h1>מהלך הניסוי</h1>
+  <p class="lead">איך כותבים פרק שמישהו אחר יכול לחזור עליו. היה בשיעור? זו חזרה. לא היה? הכול כאן, לפי הסדר של השיעור.</p>
+  <nav class="toc"><a href="#open">1. הפעילות</a><a href="#part1">2. מהלך הניסוי</a></nav>
+<h2 id="open">בשיעור: מתכון עיוור</h2>
+  <p>מבצעים הוראה <b>בדיוק</b> כמו שהיא כתובה, ולא יותר. מה שחסר בהוראה, חסר גם בביצוע.</p>
+  <ol class="steps"><li><b>ההוראה</b><span>&quot;מכינים כוס תה: שמים שקית ומוסיפים מים.&quot; המורה מבצעת בדיוק את מה שכתוב.</span></li><li><b>מתקנים</b><span>כל פעם מוסיפים פרט אחד שחסר: איזה מים? כמה? לכמה זמן? ומבצעים שוב.</span></li><li><b>ועכשיו מהחממה</b><span>&quot;ריססנו את הצמחים בדשן פעם בשבוע ומדדנו את הגובה.&quot; מה הייתם צריכים לשאול כדי לחזור על הניסוי הזה?</span></li></ol>
+  <div class="note"><b>מה גילינו? חשבו על זה גם אתם:</b><ul><li>כמה פרטים חסרו? ומי יודע אותם חוץ ממי שעשה את הניסוי?</li><li>איזה פרט כזה חסר אצלכם?</li></ul></div>
+  
+<h2 id="part1">מהלך הניסוי: מה כותבים</h2><p class="lead">המבחן של הפרק: <b>מישהו אחר יכול לחזור על הניסוי שלכם רק מתוך מה שכתבתם.</b> כותבים בזמן עבר: &quot;שתלנו&quot;, &quot;מדדנו&quot;.</p>
+<h3>הפרק בארבעה חלקים</h3><ol class="steps"><li><b>החומר החי</b><span>איזה אורגניזם (עם השם המדעי), מאיפה הגיע ובאילו תנאים גדל. עם צילום.</span></li><li><b>מערך המחקר</b><span>מה שיניתם ובאילו רמות, מה מדדתם ואיך, מה נשאר קבוע, מה הביקורת וכמה חזרות. עם איור של מערך הניסוי.</span></li><li><b>שיטות, חומרים וציוד</b><span>כל שיטה בתת-סעיף משלה: מה עושים, באיזה מכשיר ובאילו כמויות.</span></li><li><b>מהלך הניסוי</b><span>לפי סדר הביצוע, כולל חזרות, תקלות ומה ששיניתם בעקבותיהן. עם תמונות שלכם עובדים.</span></li></ol><div class="note">כל החלקים כבר מחכים לכם <b>בתבנית</b>, עם הסבר קצר בכל אחד. בכימיה ובפיזיקה אין &quot;חומר חי&quot;, ובמקומו יש טבלת חומרים או מערכת הניסוי.</div>
+<h3>מה חשוב במקצוע שלכם</h3><ol class="steps"><li><b>ביולוגיה</b><span><b>חובה:</b> לפחות שתי תמונות שלכם בזמן הניסוי, עם תאריך הצילום בכיתוב.</span></li><li><b>חקלאות</b><span>מומלץ מאוד: תמונות של השיטות, של שלבי הגידול ושל ההבדלים בין הטיפולים. המהלך כולל בעיות ותקלות.</span></li><li><b>כימיה</b><span>טבלת חומרים: לכל חומר נוסחה מולקולרית ונוסחת מבנה. לכל תגובה ניסוח מאוזן.</span></li><li><b>פיזיקה</b><span>לכל מכשיר מדידה: מה הוא מודד, מה התחום שלו, מה הרזולוציה ומה אי-הוודאות.</span></li><li><b>מדעי הסביבה</b><span>איפה נערך המחקר, ו<b>חובה</b> תמונות שצילמתם בעצמכם.</span></li><li><b>מדעי המחשב</b><span>הפרק נקרא &quot;מהלך הפיתוח וההרצות&quot;: שלבי הפיתוח, הבדיקות, ומה לא עבד. הפירוט בתבנית.</span></li></ol>
+<h3>לפני ואחרי: פסקה מהחממה</h3><div class="cards"><div class="card"><b>לפני</b><p class="quote">ריססנו את הצמחים בדשן פעם בשבוע ומדדנו את הגובה.</p><span class="muted">אילו צמחים? כמה? איזה דשן ובאיזה ריכוז? איך מודדים גובה? ומה קיבלה הביקורת?</span></div><div class="card"><b>אחרי (דוגמה)</b><p class="quote">בכל יום ראשון ריססנו את 10 שתילי העגבנייה בטיפול (עציצים 1–10) בתמיסת הנדוסר (GADOT agro) בריכוז 5 מ&quot;ל לליטר מים, במרסס ידני, עד שהעלים נרטבו. את 10 שתילי הביקורת (עציצים 11–20) ריססנו באותו זמן במים בלבד. את הגובה מדדנו בסרגל, מפני הקרקע ועד הקצה העליון של הגבעול, בס&quot;מ. בשבוע השלישי המרסס טפטף על הקרקע, ולכן מאותו שבוע ריססנו ממרחק של 20 ס&quot;מ.</p><span class="muted">יש בה מי, כמה, במה, איך מודדים, מה קיבלה הביקורת, ותקלה עם השינוי שבא בעקבותיה. המספרים כאן להמחשה בלבד.</span></div></div>
+<h3>איך כותבים פריט ציוד או חומר</h3><div class="tw"><table><caption>דוגמאות מהטבלה שאספתם בשנה שעברה</caption><thead><tr><th>מה זה</th><th>יצרן</th><th>דגם או הרכב</th><th>ומה עוד כותבים</th></tr></thead><tbody><tr><td>צנטריפוגה</td><td>Hermle LaborTechnik</td><td>Z 300 Universal</td><td>המהירות (סל&quot;ד) וזמן הסחרור בניסוי שלכם</td></tr><tr><td>ספקטרופוטומטר</td><td>Mrclab</td><td>spectro-v11d</td><td>אורך הגל שבו מדדתם, ובאילו קיוותות</td></tr><tr><td>הנדוסר (דשן נוזלי)</td><td>GADOT agro</td><td>ההרכב מהתווית, למשל: חנקן 9%</td><td>הריכוז שבו השתמשתם, ובאיזו תדירות</td></tr><tr><td>משקל אלקטרוני</td><td>לא ידוע? מצלמים את התווית</td><td>כתוב על המכשיר</td><td>הדיוק: כמה ספרות אחרי הנקודה</td></tr></tbody></table></div><div class="note"><b>איפה מוצאים את הפרטים:</b> מצלמים את התווית של המכשיר ואת האריזה של החומר, ומחפשים לפי שם הדגם. אין תווית? שואלים במעבדה של החממה. <b>במכשיר מדידה, הכי חשוב לכתוב את הדיוק שלו.</b></div>
+<h3>מהיומן למהלך</h3><ol class="steps"><li><b>פותחים את היומן</b><span>ואת התמונות בטלפון. התאריכים שם הם השלד של המהלך.</span></li><li><b>כותבים לפי הסדר</b><span>בזמן עבר, שלב אחרי שלב, כולל החזרות.</span></li><li><b>תקלה היא לא בושה</b><span>מה קרה ומה שיניתם בעקבותיה. זה מראה שעשיתם את המחקר בעצמכם.</span></li><li><b>תמונות עם תאריך</b><span>את התאריך לוקחים מפרטי הקובץ בטלפון. <b>לא מעבירים בוואטסאפ</b>, כי הוא מוחק את תאריך הצילום. משתמשים באלבום משותף או בדרייב.</span></li></ol>
+<h3>עזרה בניסוח, בלי שהבינה תמציא</h3><div class="fx"><p><b>פרומפט להעתקה</b></p><div class="fxrow"><code dir="rtl">אלה הרשימות שלי מיומן הניסוי: [מדביקים כאן]. נסח מהן פסקה לפרק &quot;מהלך הניסוי&quot; בעבודת גמר, בזמן עבר ולפי סדר הביצוע. אל תוסיף אף פרט, מספר, חומר או מכשיר שלא כתבתי. איפה שחסר פרט שמישהו אחר צריך כדי לחזור על הניסוי (כמות, ריכוז, מכשיר, זמן), כתוב [?], ובסוף שאל אותי על כל [?].</code><button type="button" class="copy" data-f="אלה הרשימות שלי מיומן הניסוי: [מדביקים כאן]. נסח מהן פסקה לפרק &quot;מהלך הניסוי&quot; בעבודת גמר, בזמן עבר ולפי סדר הביצוע. אל תוסיף אף פרט, מספר, חומר או מכשיר שלא כתבתי. איפה שחסר פרט שמישהו אחר צריך כדי לחזור על הניסוי (כמות, ריכוז, מכשיר, זמן), כתוב [?], ובסוף שאל אותי על כל [?].">העתקה</button></div>
+    <p class="small">מדביקים את הרשימות במקום הסוגריים. אחר כך <b>בודקים כל משפט מול היומן</b> וממלאים את ה-[?]. השתמשתם? הפרומפט נכנס לנספח הפרומפטים.</p></div>
+<div class="check"><h4>צ'קליסט: לפני שסוגרים את הפרק</h4><label><input type="checkbox"> <span>מישהו אחר יכול <b>לחזור על הניסוי</b> רק מתוך הפרק.</span></label><label><input type="checkbox"> <span>לכל חומר: שם, יצרן, ו<b>כמות או ריכוז</b>.</span></label><label><input type="checkbox"> <span>לכל מכשיר: שם, יצרן, דגם, ובמכשיר מדידה גם <b>הדיוק</b>.</span></label><label><input type="checkbox"> <span>הביקורת ומספר החזרות כתובים במפורש.</span></label><label><input type="checkbox"> <span>הכול <b>בזמן עבר</b>, ולפי סדר הביצוע.</span></label><label><input type="checkbox"> <span>תקלות ומה ששיניתם בעקבותיהן (אם היו).</span></label><label><input type="checkbox"> <span>לפחות שתי תמונות שלכם עובדים, עם <b>תאריך הצילום</b> בכיתוב.</span></label><label><input type="checkbox"> <span>לכל תמונה ואיור: מספר וכיתוב.</span></label></div>
+<div class="note"><b>עכשיו אתם:</b> פותחים את הפרק בתבנית, עוברים על הצ'קליסט ומסמנים מה חסר. אחר כך חוזרים לעבוד על התוצאות, או ממשיכים במהלך.</div>
+
+</div>
+<script>
+(() => {
+  let done = 0, right = 0;
+  const L = ["א","ב","ג","ד"];
+  document.querySelectorAll('.q').forEach(q => {
+    const ans = +q.dataset.ans, btns = q.querySelectorAll('.opts button'), why = q.querySelector('.why');
+    btns.forEach(b => b.addEventListener('click', () => {
+      const i = +b.dataset.i;
+      btns.forEach(x => { x.disabled = true; if (+x.dataset.i === ans) x.classList.add('right'); });
+      if (i !== ans) b.classList.add('wrong');
+      why.querySelector('.verdict').textContent = i === ans ? 'נכון!' : 'לא בדיוק. התשובה: ' + L[ans] + '.';
+      why.hidden = false;
+      done++; if (i === ans) right++;
+      document.getElementById('done').textContent = done;
+      document.getElementById('right').textContent = right;
+    }));
+  });
+  document.querySelectorAll('.copy').forEach(b => b.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(b.dataset.f); b.textContent = 'הועתק ✓'; }
+    catch { b.textContent = 'סמנו והעתיקו ביד'; }
+    setTimeout(() => { b.textContent = 'העתקה'; }, 2000);
+  }));
+})();
+</script>
+</body>
+</html>
