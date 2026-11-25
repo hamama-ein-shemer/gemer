@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>סיכום ותקציר</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root { --bg: #faf7f0; --card: #ffffff; --ink: #2e3a33; --muted: #5f6e64; --line: #d5ddd6; --accent: #2f6b4f; --soft: #eef4ec;
+  --ok: #d9eed5; --okInk: #24613f; --bad: #fbe1d6; --badInk: #a2482a; --butter: #fbf0c9; --slot: #fff1a8;
+  --r-a: #dcebfa; --r-b: #e3f3df; --r-c: #fde6cf; --r-d: #efe2f7; --r-e: #fadbdb; --r-f: #dff3f1; --r-g: #f1ecd9; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --bg: #151a17; --card: #1d2420; --ink: #e6ece7; --muted: #a3b0a7; --line: #39443d; --accent: #8fd1a6; --soft: #233029;
+    --ok: #1f3a2a; --okInk: #9be0b4; --bad: #43281f; --badInk: #f3b39b; --butter: #3a3420; --slot: #4a4320;
+    --r-a: #1e3247; --r-b: #213a26; --r-c: #45311d; --r-d: #352743; --r-e: #462424; --r-f: #1d3c39; --r-g: #3a3522; }
+}
+:root[data-theme="dark"] { --bg: #151a17; --card: #1d2420; --ink: #e6ece7; --muted: #a3b0a7; --line: #39443d; --accent: #8fd1a6; --soft: #233029;
+  --ok: #1f3a2a; --okInk: #9be0b4; --bad: #43281f; --badInk: #f3b39b; --butter: #3a3420; --slot: #4a4320;
+  --r-a: #1e3247; --r-b: #213a26; --r-c: #45311d; --r-d: #352743; --r-e: #462424; --r-f: #1d3c39; --r-g: #3a3522; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px 16px 60px; background: var(--bg); color: var(--ink); font: 17px/1.65 Rubik, Arial, sans-serif; }
+.wrap { max-width: 860px; margin: 0 auto; }
+h1 { font-size: 26px; margin: 0 0 6px; color: var(--accent); }
+h2 { font-size: 22px; color: var(--accent); margin: 40px 0 10px; padding-top: 8px; border-top: 2px solid var(--line); scroll-margin-top: 70px; }
+h3 { font-size: 19px; margin: 22px 0 8px; }
+a { color: var(--accent); }
+.small { font-size: 14px; } .muted { color: var(--muted); }
+.lead { background: var(--soft); border-radius: 14px; padding: 12px 16px; }
+nav.toc { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+nav.toc a { background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; text-decoration: none; font-size: 15px; }
+.bar { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 8px 0; border-bottom: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; }
+.bar .lbl { font-size: 15px; color: var(--muted); }
+.seg-btns { display: flex; flex-wrap: wrap; gap: 6px; }
+.seg-btns button { font: inherit; font-size: 15px; color: var(--ink); background: var(--card); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; cursor: pointer; }
+.seg-btns button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.tr { display: none; font-size: 14px; color: var(--muted); line-height: 1.45; margin-top: 2px; }
+.tr[dir="ltr"] { text-align: left; }
+body[data-lang="ru"] .tr[data-l="ru"], body[data-lang="ar"] .tr[data-l="ar"], body[data-lang="en"] .tr[data-l="en"] { display: block; }
+.note { background: var(--butter); border-radius: 12px; padding: 10px 16px; margin: 12px 0; }
+.note.big { border: 2px solid var(--badInk); background: var(--bad); }
+.note.big h3 { margin-top: 2px; color: var(--badInk); }
+.note ul { margin: 6px 0; padding-inline-start: 22px; }
+.box { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 16px; margin: 12px 0; }
+details.box > summary { cursor: pointer; font-weight: 600; color: var(--accent); }
+mark.slot { background: var(--slot); color: inherit; border-radius: 4px; padding: 0 2px; }
+ul.ph { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+ul.ph li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 12px; }
+.phrow { display: flex; gap: 10px; align-items: flex-start; justify-content: space-between; }
+.phrow .he { flex: 1; }
+.copy { flex: none; font: inherit; font-size: 14px; color: var(--ink); background: var(--butter); border: 1px solid var(--line); border-radius: 999px; padding: 2px 12px; cursor: pointer; }
+.copy.done { background: var(--ok); }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; background: var(--card); font-size: 15px; }
+th { background: #4e8f67; color: #fff; font-weight: 600; } th, td { border: 1px solid var(--line); padding: 5px 8px; text-align: start; vertical-align: top; }
+td.no { color: var(--badInk); text-decoration: line-through; }
+td .tr { display: none; margin: 0; }
+.col-tr { display: none; }
+body[data-lang="ru"] .col-tr, body[data-lang="ar"] .col-tr, body[data-lang="en"] .col-tr { display: table-cell; }
+body[data-lang] td.col-tr .tr { display: none; }
+body[data-lang="ru"] td.col-tr .tr[data-l="ru"], body[data-lang="ar"] td.col-tr .tr[data-l="ar"], body[data-lang="en"] td.col-tr .tr[data-l="en"] { display: block; color: var(--ink); font-size: 15px; }
+.gloss-l { display: table-cell; }
+body[data-lang="ru"] .gloss-l:not([data-l="ru"]), body[data-lang="ar"] .gloss-l:not([data-l="ar"]), body[data-lang="en"] .gloss-l:not([data-l="en"]) { display: none; }
+input[type="search"] { font: inherit; width: 100%; max-width: 420px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--ink); margin: 6px 0 10px; }
+/* הדוגמאות */
+.ex { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 16px; margin: 14px 0; }
+.ex-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.ex-tabs button { font: inherit; font-size: 15px; color: var(--ink); background: var(--soft); border: 1px solid var(--line); border-radius: 999px; padding: 3px 12px; cursor: pointer; }
+.ex-tabs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+.ex-panel h4 { margin: 4px 0; font-size: 17px; }
+.ex-opts { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 15px; margin: 6px 0; }
+.ex-opts label { display: flex; gap: 6px; align-items: center; cursor: pointer; }
+.ex-text p { margin: 8px 0; line-height: 2; }
+.s { border-radius: 6px; padding: 2px 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+.chip { display: inline-block; font-size: 12px; font-weight: 700; line-height: 1.3; border: 1px solid currentColor; border-radius: 999px; padding: 0 6px; margin-inline-end: 4px; color: var(--muted); vertical-align: 2px; }
+.hide-chips .chip { display: none; }
+.frame { display: none; }
+.show-frames .frame { display: block; margin: 2px 0 6px; font-size: 14px; color: var(--muted); }
+.show-frames .s { display: inline; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; padding: 0; list-style: none; font-size: 14px; }
+.legend li { border-radius: 8px; padding: 2px 8px; }
+.legend .tr { display: none; }
+body[data-lang="ru"] .legend .tr[data-l="ru"], body[data-lang="ar"] .legend .tr[data-l="ar"], body[data-lang="en"] .legend .tr[data-l="en"] { display: inline; margin-inline-start: 4px; }
+.r-bg, .r-hyp { background: var(--r-g); } .r-what, .r-point { background: var(--r-a); } .r-treat, .r-found { background: var(--r-b); }
+.r-const, .r-num, .r-stat { background: var(--r-c); } .r-measure, .r-ref { background: var(--r-d); } .r-why { background: var(--r-f); }
+.r-limit { background: var(--r-e); } .r-use, .r-next { background: var(--soft); }
+.r-link { background: var(--r-c); outline: 2px dashed var(--r-d); outline-offset: -2px; } .r-recap { background: var(--r-a); } .r-reflect { background: var(--butter); }
+.ex-h { margin: 16px 0 2px; font-size: 16px; color: var(--accent); border-bottom: 1px solid var(--line); }
+.flow { list-style: none; padding: 0; margin: 10px 0; display: grid; gap: 6px; }
+.flow li { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 8px 14px; border-inline-start: 6px solid var(--accent); }
+.flow li.q { border-inline-start-color: #4e8f67; margin-inline-start: 18px; } .flow li.link { border-inline-start-style: dashed; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.pair > div { border-radius: 12px; padding: 8px 12px; } .pair .res { background: var(--r-a); } .pair .disc { background: var(--r-f); }
+.pair .lbl { display: block; font-size: 13px; font-weight: 700; color: var(--muted); }
+.pair .why { grid-column: 1 / -1; font-size: 15px; color: var(--muted); padding: 0 4px; }
+table.cmp td:first-child { font-weight: 600; background: var(--soft); }
+@media (max-width: 560px) { .pair { grid-template-columns: 1fr; } }
+.before { background: var(--bad); border-radius: 12px; padding: 8px 14px; margin: 8px 0; }
+.before b { color: var(--badInk); }
+.changes { margin: 8px 0; padding-inline-start: 22px; } .changes li { margin: 4px 0; }
+.steps { counter-reset: st; list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.steps > li { counter-increment: st; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px 10px 14px; position: relative; padding-inline-start: 52px; }
+.steps > li::before { content: counter(st); position: absolute; inset-inline-start: 12px; top: 10px; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); font-weight: 700; color: var(--accent); }
+.steps h3 { margin: 0 0 4px; font-size: 18px; }
+.check { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 16px; margin: 10px 0; }
+.check label { display: flex; gap: 10px; align-items: flex-start; margin: 8px 0; }
+.check input { margin-top: 6px; width: 18px; height: 18px; flex: none; }
+.prompt { background: var(--card); border: 1px solid var(--line); border-radius: 14px; margin: 12px 0; overflow: hidden; }
+.prompt-h { display: flex; justify-content: space-between; align-items: center; gap: 10px; background: var(--soft); padding: 8px 14px; font-weight: 600; }
+.prompt pre { margin: 0; padding: 10px 14px; white-space: pre-wrap; font: 15px/1.6 Rubik, Arial, sans-serif; }
+@media (max-width: 560px) { body { font-size: 16px; } .phrow { flex-direction: column; } .phrow .copy { align-self: flex-end; } }
+@media print { .bar, nav.toc, .copy { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <p class="small"><a href="../index.html">← למדריך לעבודת הגמר</a></p>
+  <h1>סיכום ותקציר</h1>
+  <p class="lead">שני הפרקים האחרונים שכותבים. הסיכום סוגר את העבודה, והתקציר פותח אותה. שניהם <strong>חוזרים</strong> על מה שכבר כתבתם, ולכן הם קלים יותר ממה שנראה.</p>
+  <div class="bar" role="group" aria-label="תרגום">
+  <span class="lbl">תרגום:</span>
+  <div class="seg-btns" id="langBtns"><button type="button" data-lang="">כבוי</button><button type="button" data-lang="ru" lang="ru">Русский</button><button type="button" data-lang="ar" lang="ar">العربية</button><button type="button" data-lang="en" lang="en">English</button></div>
+</div>
+  <nav class="toc"><a href="#compare">מה ההבדל</a><a href="#summary">הסיכום</a><a href="#reflection">רפלקציה</a><a href="#abstract">התקציר</a><a href="#abstract-prompt">פרומפט לתקציר</a></nav>
+
+  <h2 id="compare">דיון, סיכום ותקציר: מה ההבדל</h2>
+  <div class="tw"><table class="cmp"><thead><tr><th></th><th>דיון</th><th>סיכום</th><th>תקציר</th></tr></thead>
+    <tbody><tr><td>מה עושים</td><td>מסבירים <strong>למה</strong> יצא מה שיצא</td><td><strong>חוזרים</strong> בקצרה על כל המחקר: מה נבדק, איך, ומה נמצא</td><td>כל המחקר בפסקה אחת, לקורא שעוד לא קרא את העבודה</td></tr><tr><td>איפה בעבודה</td><td>אחרי התוצאות</td><td>בסוף העבודה</td><td><strong>בהתחלה</strong>, לפני המבוא</td></tr><tr><td>מתי כותבים</td><td>אחרי התוצאות</td><td>אחרי הדיון</td><td><strong>אחרון</strong>, אחרי שהמנחה אישר/ה את כל השאר</td></tr><tr><td>מאמרים</td><td>כן, הרבה</td><td>כמעט לא</td><td>לא</td></tr><tr><td>מספרים</td><td>מספר אחד או שניים לכל טענה</td><td>התוצאות העיקריות</td><td>התוצאות העיקריות</td></tr><tr><td>גוף ראשון</td><td>לא</td><td>רק ברפלקציה</td><td>לא</td></tr></tbody></table></div>
+
+  <h2 id="summary">הסיכום</h2>
+  <div class="note" data-subj-only="biology" hidden><strong>בביולוגיה:</strong> נכתב <strong>בסוף</strong>. בתמציתיות: שאלת המחקר, מטרות העבודה והמסקנות. אחריו באה <strong>רפלקציה אישית קצרה</strong>, שהיא חובה בביולוגיה.</div><div class="note" data-subj-only="agriculture" hidden><strong>בחקלאות:</strong> נכתב <strong>בסוף</strong>, בתמציתיות: שאלת המחקר, עיקרי העבודה והמסקנות. מומלץ <strong>לא יותר מעמוד אחד</strong>.</div><div class="note" data-subj-only="chemistry" hidden><strong>בכימיה:</strong> נכתב <strong>בסוף</strong>, ו<strong>תמציתי ביותר</strong>: שאלת המחקר, מטרות העבודה והמסקנות.</div><div class="note" data-subj-only="physics" hidden><strong>בפיזיקה:</strong> נכתב <strong>בסוף</strong>, בתמציתיות: שאלת המחקר, מטרות העבודה והמסקנות.</div><div class="note" data-subj-only="environment" hidden><strong>במדעי הסביבה:</strong> נכתב <strong>בסוף</strong>, כמענה לשאלות שהוצגו במבוא: שאלת המחקר, מטרות העבודה והמסקנות, בתמציתיות. לפי ההנחיות <strong>כאן ממליצים על יישומים</strong> ו<strong>מציעים נושאים להמשך מחקר</strong>.</div><div class="note" data-subj-only="cs" hidden><strong>במדעי המחשב:</strong> נכתב <strong>בסוף</strong>, בתמציתיות: שאלת המחקר, מטרות העבודה והמסקנות.</div>
+  <ul><li><strong>הסיכום סוגר את הסיפור.</strong> מי שקורא רק אותו צריך להבין מה שאלתם, מה עשיתם, מה מצאתם ומה זה אומר.</li><li><strong>חזרה זה בסדר, ואפילו טוב.</strong> בסיכום חוזרים על מה שכבר כתבתם: השאלות, השיטה בקצרה והתוצאות. זו לא כפילות. זה התפקיד של הסיכום.</li><li>רעיון שעוזר: קחו את המשפט הראשון של כל חלק בדיון, וקצרו אותו.</li><li>כותבים בתמציתיות, בדרך כלל חצי עמוד עד עמוד.</li></ul>
+  <h3>מה כותבים, לפי הסדר</h3>
+  <ol class="steps"><li><h3>מה נבדק</h3><p style="margin:4px 0">מטרת המחקר ושתי השאלות.</p>
+    <div class="phrow"><span class="he small" translate="no">במחקר זה נבדקו שתי שאלות: <mark class="slot">[...]</mark> ו<mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="במחקר זה נבדקו שתי שאלות: [...] ו[...].">העתקה</button></div></li><li><h3>איך</h3><p style="margin:4px 0">משפט אחד או שניים על השיטה. בלי פרטים.</p>
+    <div class="phrow"><span class="he small" translate="no">לשם כך <mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="לשם כך [...].">העתקה</button></div></li><li><h3>מה נמצא</h3><p style="margin:4px 0">התוצאה העיקרית בכל שאלה.</p>
+    <div class="phrow"><span class="he small" translate="no">בניסוי הראשון נמצא ש<mark class="slot">[...]</mark>. בניסוי השני נמצא ש<mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="בניסוי הראשון נמצא ש[...]. בניסוי השני נמצא ש[...].">העתקה</button></div></li><li><h3>מה זה אומר</h3><p style="margin:4px 0">מה שתי השאלות מראות יחד, והמסקנה העיקרית.</p>
+    <div class="phrow"><span class="he small" translate="no">יחד, שתי השאלות מראות ש<mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="יחד, שתי השאלות מראות ש[...].">העתקה</button></div></li><li><h3>יישום והמשך</h3><p style="margin:4px 0">למה זה טוב, ומה כדאי לבדוק עכשיו. (בכימיה ובמדעי המחשב זה בפרק המסקנות.)</p>
+    <div class="phrow"><span class="he small" translate="no">ממצאים אלה יכולים לסייע ב<mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="ממצאים אלה יכולים לסייע ב[...].">העתקה</button></div></li><li><h3>רפלקציה (אם אין לה פרק משלה)</h3><p style="margin:4px 0">פסקה קצרה: מה המחקר נתן לכם.</p>
+    <div class="phrow"><span class="he small" translate="no">המחקר לימד אותי <mark class="slot">[...]</mark>.</span><button class="copy" type="button" data-text="המחקר לימד אותי [...].">העתקה</button></div></li></ol>
+  <div class="ex">
+    <p class="small muted" style="margin:0">דוגמה מלאה לסיכום. המחקר, הנתונים והמאמרים בדוגמה <strong>בדיוניים</strong>. הם כאן כדי להראות איך כותבים, לא כמקור.</p>
+    <div class="ex-tabs" role="group" aria-label="מקצוע"><button type="button" data-ex="biology">ביולוגיה</button><button type="button" data-ex="agriculture">חקלאות</button><button type="button" data-ex="chemistry">כימיה</button></div>
+    <div class="ex-opts"><label><input type="checkbox" data-cls="hide-chips" checked> להראות מה עושה כל משפט</label><label><input type="checkbox" data-cls="show-frames"> להראות את תבנית המשפט</label></div>
+    <div class="ex-panel" data-ex="biology">
+      <h4>השפעת צבע האור על גדילת האצה כלורלה</h4>
+      <ul class="legend"><li class="r-recap">חזרה על מה שנעשה<span class="tr" data-l="ru" lang="ru" dir="ltr">Повтор: что было сделано</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تذكير بما تم عمله</span><span class="tr" data-l="en" lang="en" dir="ltr">Recap of what was done</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li><li class="r-link">הקשר בין השאלות<span class="tr" data-l="ru" lang="ru" dir="ltr">Связь между вопросами</span><span class="tr" data-l="ar" lang="ar" dir="rtl">العلاقة بين السؤالين</span><span class="tr" data-l="en" lang="en" dir="ltr">Link between the questions</span></li><li class="r-use">משמעות ויישום<span class="tr" data-l="ru" lang="ru" dir="ltr">Значение и применение</span><span class="tr" data-l="ar" lang="ar" dir="rtl">الأهمية والتطبيق</span><span class="tr" data-l="en" lang="en" dir="ltr">Meaning and application</span></li><li class="r-next">המשך מחקר<span class="tr" data-l="ru" lang="ru" dir="ltr">Дальнейшие исследования</span><span class="tr" data-l="ar" lang="ar" dir="rtl">بحث مستقبلي</span><span class="tr" data-l="en" lang="en" dir="ltr">Future research</span></li><li class="r-reflect">רפלקציה<span class="tr" data-l="ru" lang="ru" dir="ltr">Рефлексия</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تأمّل ذاتي</span><span class="tr" data-l="en" lang="en" dir="ltr">Reflection</span></li></ul>
+      <div class="ex-text"><p><span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>במחקר זה נבדקה השפעת האור על קצב הגדילה של האצה כלורלה, בשתי שאלות: מה השפעת צבע האור, ומה השפעת עוצמת האור.</span><span class="frame" translate="no">← במחקר זה נבדקו שתי שאלות: <mark class="slot">[...]</mark> ו<mark class="slot">[...]</mark>.</span> <span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>לשם כך גודלו תרביות של האצה במשך 15 ימים, פעם תחת שלושה צבעי אור ופעם תחת שלוש עוצמות אור, והצפיפות האופטית שלהן נמדדה ארבע פעמים.</span><span class="frame" translate="no">← לשם כך <mark class="slot">[...]</mark>.</span> <span class="s r-found"><span class="chip">מה נמצא</span>נמצא שתחת אור אדום האצה גדלה מהר יותר מאשר תחת אור כחול, ושהגדילה עולה עם עוצמת האור עד 100 µmol, ומעל זה כבר לא עולה.</span><span class="frame" translate="no">← בניסוי הראשון נמצא ש<mark class="slot">[...]</mark>. בניסוי השני נמצא ש<mark class="slot">[...]</mark>.</span> <span class="s r-link"><span class="chip">הקשר בין השאלות</span>יחד, שתי השאלות מראות שצבע האור ועוצמתו קשורים זה לזה: ההבדל בין הצבעים חשוב בעיקר כשהאור חלש.</span><span class="frame" translate="no">← יחד, שתי השאלות מראות ש<mark class="slot">[...]</mark>.</span> <span class="s r-use"><span class="chip">משמעות ויישום</span>ממצאים אלה יכולים לסייע בבחירת תאורה חסכונית לגידול אצות, כי אין טעם להגביר את האור מעבר לנקודת הרוויה.</span><span class="frame" translate="no">← ממצאים אלה יכולים לסייע ב<mark class="slot">[...]</mark>.</span> <span class="s r-next"><span class="chip">המשך מחקר</span>במחקר המשך אפשר לבדוק את שני הגורמים יחד: כל צבע בכמה עוצמות.</span><span class="frame" translate="no">← במחקר המשך אפשר לבדוק <mark class="slot">[...]</mark>.</span> </p><p><span class="s r-reflect"><span class="chip">רפלקציה</span>המחקר לימד אותי שתוצאה לא צפויה, כמו הגדילה באור הלבן, היא לא כישלון, אלא שאלה חדשה. למדתי גם לתכנן ניסוי כך שבכל פעם משתנה רק גורם אחד.</span><span class="frame" translate="no">← המחקר לימד אותי <mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> לסיכום, האור חשוב לאצות. למדתי הרבה מהעבודה הזאת.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li>סיכום טוב <strong>חוזר</strong> על מה שנעשה: השאלות, השיטה בקצרה והתוצאות. זו לא כפילות. זה התפקיד שלו.</li><li>כתוב מה נמצא בכל אחת משתי השאלות, ומה הקשר ביניהן.</li><li>&quot;למדתי הרבה&quot; → רפלקציה מסוימת: <strong>מה</strong> למדתם. כאן מותר לכתוב בגוף ראשון.</li><li><strong>בביולוגיה הרפלקציה היא פרק נפרד, והוא חובה.</strong> לכן אצלכם הפסקה האחרונה עוברת לפרק הרפלקציה.</li></ul>
+      </details>
+    </div><div class="ex-panel" data-ex="agriculture">
+      <h4>השפעת אחוז הקומפוסט במצע על יבול החסה</h4>
+      <ul class="legend"><li class="r-recap">חזרה על מה שנעשה<span class="tr" data-l="ru" lang="ru" dir="ltr">Повтор: что было сделано</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تذكير بما تم عمله</span><span class="tr" data-l="en" lang="en" dir="ltr">Recap of what was done</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li><li class="r-link">הקשר בין השאלות<span class="tr" data-l="ru" lang="ru" dir="ltr">Связь между вопросами</span><span class="tr" data-l="ar" lang="ar" dir="rtl">العلاقة بين السؤالين</span><span class="tr" data-l="en" lang="en" dir="ltr">Link between the questions</span></li><li class="r-use">משמעות ויישום<span class="tr" data-l="ru" lang="ru" dir="ltr">Значение и применение</span><span class="tr" data-l="ar" lang="ar" dir="rtl">الأهمية والتطبيق</span><span class="tr" data-l="en" lang="en" dir="ltr">Meaning and application</span></li><li class="r-next">המשך מחקר<span class="tr" data-l="ru" lang="ru" dir="ltr">Дальнейшие исследования</span><span class="tr" data-l="ar" lang="ar" dir="rtl">بحث مستقبلي</span><span class="tr" data-l="en" lang="en" dir="ltr">Future research</span></li><li class="r-reflect">רפלקציה<span class="tr" data-l="ru" lang="ru" dir="ltr">Рефлексия</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تأمّل ذاتي</span><span class="tr" data-l="en" lang="en" dir="ltr">Reflection</span></li></ul>
+      <div class="ex-text"><p><span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>במחקר זה נבדקו שתי שאלות: מה השפעת אחוז הקומפוסט במצע על יבול החסה, ומה השפעת כמות ההשקיה על היבול במצע עם קומפוסט ובלי קומפוסט.</span><span class="frame" translate="no">← במחקר זה נבדקו שתי שאלות: <mark class="slot">[...]</mark> ו<mark class="slot">[...]</mark>.</span> <span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>לשם כך גודלו שתילי חסה בחממה במשך שישה שבועות, בשני ניסויים, ובסוף כל ניסוי נשקל המשקל הטרי של הצמחים.</span><span class="frame" translate="no">← לשם כך <mark class="slot">[...]</mark>.</span> <span class="s r-found"><span class="chip">מה נמצא</span>נמצא ש-20% קומפוסט העלו את היבול ב-39%, ו-40% לא העלו אותו יותר. כשההשקיה הופחתה בחצי, היבול ירד ב-31% במצע בלי קומפוסט, ורק ב-14% במצע עם קומפוסט.</span><span class="frame" translate="no">← בניסוי הראשון נמצא ש<mark class="slot">[...]</mark>. בניסוי השני נמצא ש<mark class="slot">[...]</mark>.</span> <span class="s r-link"><span class="chip">הקשר בין השאלות</span>יחד, שתי השאלות מראות שהקומפוסט עוזר לחסה, וככל הנראה גם משום שהוא שומר מים במצע.</span><span class="frame" translate="no">← יחד, שתי השאלות מראות ש<mark class="slot">[...]</mark>.</span> <span class="s r-use"><span class="chip">משמעות ויישום</span>לכן מומלץ לגדל חסה במצע עם כ-20% קומפוסט. כך אפשר להעלות את היבול, וגם לחסוך במים.</span><span class="frame" translate="no">← ממצאים אלה יכולים לסייע ב<mark class="slot">[...]</mark>.</span> <span class="s r-next"><span class="chip">המשך מחקר</span>במחקר המשך אפשר למדוד את הלחות במצע, ולבדוק את התוצאה גם בשטח פתוח.</span><span class="frame" translate="no">← במחקר המשך אפשר לבדוק <mark class="slot">[...]</mark>.</span> </p><p><span class="s r-reflect"><span class="chip">רפלקציה</span>במחקר הזה הבנתי כמה עבודה יש מאחורי כל מספר בטבלה: שקילה של עשרות צמחים לוקחת יום שלם. למדתי גם לבקש עזרה מהצוות בחממה כשמשהו לא עבד.</span><span class="frame" translate="no">← המחקר לימד אותי <mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> קומפוסט טוב לחסה, ואני ממליצה להשתמש בו. היה מעניין.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li>סיכום טוב <strong>חוזר</strong> על מה שנעשה: השאלות, השיטה בקצרה והתוצאות. זו לא כפילות. זה התפקיד שלו.</li><li>&quot;טוב לחסה&quot; → כמה קומפוסט, כמה עלה היבול, ומה קרה כשהיה פחות מים.</li><li>ההמלצה נשענת על התוצאות, ולא על דעה. בלי &quot;אני ממליצה&quot;.</li><li>&quot;היה מעניין&quot; → רפלקציה מסוימת: <strong>מה</strong> למדתם. כאן מותר לכתוב בגוף ראשון.</li></ul>
+      </details>
+    </div><div class="ex-panel" data-ex="chemistry">
+      <h4>השפעת הטמפרטורה על כמות ויטמין C במיץ תפוזים</h4>
+      <ul class="legend"><li class="r-recap">חזרה על מה שנעשה<span class="tr" data-l="ru" lang="ru" dir="ltr">Повтор: что было сделано</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تذكير بما تم عمله</span><span class="tr" data-l="en" lang="en" dir="ltr">Recap of what was done</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li><li class="r-link">הקשר בין השאלות<span class="tr" data-l="ru" lang="ru" dir="ltr">Связь между вопросами</span><span class="tr" data-l="ar" lang="ar" dir="rtl">العلاقة بين السؤالين</span><span class="tr" data-l="en" lang="en" dir="ltr">Link between the questions</span></li><li class="r-reflect">רפלקציה<span class="tr" data-l="ru" lang="ru" dir="ltr">Рефлексия</span><span class="tr" data-l="ar" lang="ar" dir="rtl">تأمّل ذاتي</span><span class="tr" data-l="en" lang="en" dir="ltr">Reflection</span></li></ul>
+      <div class="ex-text"><p><span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>במחקר זה נבדקו שתי שאלות: מה השפעת טמפרטורת החימום על כמות ויטמין C במיץ תפוזים, ומה השפעת זמן החימום.</span><span class="frame" translate="no">← במחקר זה נבדקו שתי שאלות: <mark class="slot">[...]</mark> ו<mark class="slot">[...]</mark>.</span> <span class="s r-recap"><span class="chip">חזרה על מה שנעשה</span>כמות ויטמין C נקבעה בטיטרציה עם יוד, אחרי חימום של 30 דקות בארבע טמפרטורות, ואחרי חימום ב-75°C לזמנים שונים.</span><span class="frame" translate="no">← לשם כך <mark class="slot">[...]</mark>.</span> <span class="s r-found"><span class="chip">מה נמצא</span>נמצא שככל שהטמפרטורה גבוהה יותר וזמן החימום ארוך יותר, נשאר במיץ פחות ויטמין C. אחרי 30 דקות ב-100°C נשארו 61% ממנו.</span><span class="frame" translate="no">← בניסוי הראשון נמצא ש<mark class="slot">[...]</mark>. בניסוי השני נמצא ש<mark class="slot">[...]</mark>.</span> <span class="s r-link"><span class="chip">הקשר בין השאלות</span>יחד, שתי השאלות מראות שהפירוק תלוי בשילוב של טמפרטורה וזמן: 60 דקות ב-75°C גרמו לירידה דומה לזו של 30 דקות ב-100°C.</span><span class="frame" translate="no">← יחד, שתי השאלות מראות ש<mark class="slot">[...]</mark>.</span> </p><p><span class="s r-reflect"><span class="chip">רפלקציה</span>בעבודה במעבדה למדתי כמה חשוב לעבוד בדיוק: טיפה אחת של יוד משנה את התוצאה. למדתי גם להסביר תגובה כימית במילים שלי.</span><span class="frame" translate="no">← המחקר לימד אותי <mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> לא כדאי לחמם מיץ, כי ויטמין C חשוב.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li>סיכום טוב <strong>חוזר</strong> על מה שנעשה: השאלות, השיטה בקצרה והתוצאות. זו לא כפילות. זה התפקיד שלו.</li><li><strong>בכימיה הסיכום &quot;תמציתי ביותר&quot;</strong>, כי היישומים וכיווני ההמשך נמצאים בפרק &quot;מסקנות ויישומים&quot;.</li><li>נוספה רפלקציה מסוימת: <strong>מה</strong> למדתם. כאן מותר לכתוב בגוף ראשון.</li></ul>
+      </details>
+    </div>
+  </div>
+
+  <div class="note" id="reflection"><h3 style="margin-top:4px">הסיכום הוא גם מקום לרפלקציה</h3><ul><li>אם אין בעבודה שלכם פרק רפלקציה נפרד, אפשר לסיים את הסיכום בפסקה קצרה: <strong>מה המחקר נתן לכם.</strong> מה למדתם על מדע, על מחקר ועל עצמכם.</li><li>כאן, ורק כאן, כותבים <strong>בגוף ראשון</strong>: &quot;למדתי&quot;, &quot;הבנתי&quot;, &quot;הופתעתי&quot;.</li><li>לא &quot;למדתי הרבה&quot; ולא &quot;היה מעניין&quot;. כותבים <strong>מה</strong> למדתם, עם דוגמה מהמחקר.</li><li>את הרפלקציה כותבים לבד, במילים שלכם, <strong>בלי בינה מלאכותית</strong>.</li><li><strong>בביולוגיה</strong> הרפלקציה היא פרק נפרד, והוא חובה. לכן שם היא נכתבת בפרק שלה.</li></ul></div>
+
+  <h2 id="abstract">התקציר</h2>
+  <div class="note big"><h3>מתי כותבים</h3><p style="margin:4px 0">את התקציר כותבים <strong>רק אחרי שהמנחה אישר/ה את כל שאר העבודה.</strong> התקציר מסכם את העבודה, ולכן כל שינוי בעבודה משנה גם אותו.</p></div>
+  <div class="note" data-subj-only="biology" hidden><strong>בביולוגיה:</strong> ההנחיות לא מחייבות תקציר, אבל נהוג לכתוב אחד והוא עוזר לבוחן/ת להיכנס לעבודה.</div><div class="note" data-subj-only="agriculture" hidden><strong>בחקלאות:</strong> ההנחיות לא מחייבות תקציר, אבל נהוג לכתוב אחד והוא עוזר לבוחן/ת להיכנס לעבודה.</div><div class="note" data-subj-only="chemistry" hidden><strong>בכימיה:</strong> נהוג לכתוב תקציר. בכימיה <strong>לא כותבים הפניות למקורות בתוך התקציר</strong>. בדקו עם המנחה אם צריך גם תקציר נפרד להגשה.</div><div class="note" data-subj-only="physics" hidden><strong>בפיזיקה:</strong> ההנחיות לא מחייבות תקציר, אבל נהוג לכתוב אחד והוא עוזר לבוחן/ת להיכנס לעבודה.</div><div class="note" data-subj-only="environment" hidden><strong>במדעי הסביבה:</strong> ההנחיות לא מחייבות תקציר, אבל נהוג לכתוב אחד והוא עוזר לבוחן/ת להיכנס לעבודה.</div><div class="note" data-subj-only="cs" hidden><strong>במדעי המחשב:</strong> <strong>במדעי המחשב התקציר הוא חובה</strong>, בעברית, ולא יותר מ-3 עמודים. לפי ההנחיות הוא ממוספר בספרות רומיות (i, ii), בנפרד מגוף העבודה.</div>
+  <p>התקציר הוא פסקה אחת: רקע קצר, מטרת המחקר ושתי השאלות, השיטה בקצרה, התוצאה העיקרית בכל שאלה עם מספרים, והמסקנה. עד עמוד אחד.</p>
+
+  <h3 id="abstract-prompt">טיוטה לתקציר בעזרת בינה מלאכותית</h3>
+  <p>מותר לבקש מהבינה טיוטה לתקציר, <strong>מתוך העבודה שכתבתם</strong>. אחר כך עוברים עליה ומעדכנים.</p>
+  <ol class="steps">
+    <li><h3>מעתיקים את העבודה, בלי פרטים מזהים</h3><p style="margin:4px 0">לפני שמדביקים, מוחקים מהעותק:</p><ul class="small"><li>השם שלכם, תעודת זהות, שם בית הספר, ושמות המנחים והמורים.</li><li>דף השער והתודות.</li><li>תמונות, בעיקר תמונות שרואים בהן אנשים.</li><li>רשימת המקורות והנספחים. הם לא נחוצים לתקציר, והם רק מאריכים.</li></ul></li>
+    <li><h3>מדביקים את הפרומפט ואת העבודה</h3><p style="margin:4px 0">ממלאים את המקצוע. הפרומפט מבקש מהבינה <strong>לשמור על השפה של העבודה</strong>, כדי שהתקציר יישמע כמוכם.</p></li>
+    <li><h3>עוברים ומעדכנים</h3><p style="margin:4px 0">הטיוטה היא רק התחלה. בודקים לפי הרשימה שלמטה, ומתקנים.</p></li>
+  </ol>
+  <div class="prompt"><div class="prompt-h"><span>פרומפט: טיוטה לתקציר</span><button class="copy" type="button" data-copy="p-abstract">העתקה</button></div><pre id="p-abstract" translate="no">זו עבודת גמר שכתבתי ב[מקצוע], בכיתה י&quot;ב. הטקסט של העבודה מודבק למטה, בלי השם שלי ובלי פרטים מזהים.
+כתוב תקציר לעבודה.
+
+כללים:
+- עד [250] מילים, בפסקה אחת.
+- המבנה: רקע (משפט או שניים), מטרת המחקר וכל שאלות המחקר, השיטה בקצרה, התוצאה העיקרית בכל שאלה (עם מספרים), והמסקנה העיקרית.
+- השתמש רק במידע שמופיע בעבודה. אל תוסיף מידע, הסברים או מסקנות שלא כתובים בה.
+- כל מספר, יחידה ושם צריכים להופיע בדיוק כמו בעבודה.
+- שמור על השפה של העבודה: השתמש במילים, במונחים ובמשפטים שכבר כתובים בה, ככל האפשר. אל תחליף מילים במילים &quot;גבוהות&quot; יותר.
+- לשון סבילה, זמן עבר.
+- בלי הפניות למקורות.
+
+אחרי התקציר, כתוב טבלה: כל משפט בתקציר, ומאיזה פרק בעבודה הוא נלקח.
+
+העבודה:
+[...]</pre></div>
+  <h3>בדיקה לפני ששולחים למנחה</h3>
+  <div class="check"><label><input type="checkbox"> <span>כל מספר בתקציר מופיע בעבודה, בדיוק אותו מספר ואותן יחידות. בודקים מול הטבלה שהבינה כתבה.</span></label><label><input type="checkbox"> <span>שתי השאלות מופיעות, ולכל אחת יש התוצאה העיקרית.</span></label><label><input type="checkbox"> <span>אין בתקציר שום דבר שלא כתוב בעבודה.</span></label><label><input type="checkbox"> <span>אתם מבינים כל מילה. מילה שלא הכרתם? מחליפים אותה במילה שכתבתם בעבודה.</span></label><label><input type="checkbox"> <span>האורך מתאים: עד עמוד אחד (במדעי המחשב עד 3 עמודים).</span></label><label><input type="checkbox"> <span>בכימיה: אין הפניות למקורות.</span></label></div>
+  <div class="box"><p style="margin:4px 0"><strong>בגילוי הנאות</strong> מוסיפים שורה כזאת, ו<strong>את הפרומפט מעתיקים לנספח ב</strong>:</p>
+    <div class="phrow"><span class="he" translate="no"><strong>כתיבת התקציר:</strong> את התקציר יצרתי בעזרת <mark class="slot">[שם הכלי]</mark>, מתוך הטקסט של העבודה שכתבתי. עברתי עליו, בדקתי שכל המספרים והמידע מופיעים בעבודה, ועדכנתי את הניסוח.</span><button class="copy" type="button" data-text="כתיבת התקציר: את התקציר יצרתי בעזרת [שם הכלי], מתוך הטקסט של העבודה שכתבתי. עברתי עליו, בדקתי שכל המספרים והמידע מופיעים בעבודה, ועדכנתי את הניסוח.">העתקה</button></div></div>
+  <h3>ככה נראה תקציר אחרי שעברו עליו</h3>
+  <div class="ex">
+    <p class="small muted" style="margin:0">דוגמה מלאה לתקציר. המחקר, הנתונים והמאמרים בדוגמה <strong>בדיוניים</strong>. הם כאן כדי להראות איך כותבים, לא כמקור.</p>
+    <div class="ex-tabs" role="group" aria-label="מקצוע"><button type="button" data-ex="biology">ביולוגיה</button><button type="button" data-ex="agriculture">חקלאות</button><button type="button" data-ex="chemistry">כימיה</button></div>
+    <div class="ex-opts"><label><input type="checkbox" data-cls="hide-chips" checked> להראות מה עושה כל משפט</label><label><input type="checkbox" data-cls="show-frames"> להראות את תבנית המשפט</label></div>
+    <div class="ex-panel" data-ex="biology">
+      <h4>השפעת צבע האור על גדילת האצה כלורלה</h4>
+      <ul class="legend"><li class="r-bg">רקע<span class="tr" data-l="ru" lang="ru" dir="ltr">Контекст</span><span class="tr" data-l="ar" lang="ar" dir="rtl">خلفية</span><span class="tr" data-l="en" lang="en" dir="ltr">Background</span></li><li class="r-what">מה נבדק ואיפה<span class="tr" data-l="ru" lang="ru" dir="ltr">Что и где изучали</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ماذا دُرس وأين</span><span class="tr" data-l="en" lang="en" dir="ltr">What was studied, where</span></li><li class="r-treat">טיפולים וחזרות<span class="tr" data-l="ru" lang="ru" dir="ltr">Варианты и повторности</span><span class="tr" data-l="ar" lang="ar" dir="rtl">المعاملات والمكررات</span><span class="tr" data-l="en" lang="en" dir="ltr">Treatments and replicates</span></li><li class="r-num">מספרים<span class="tr" data-l="ru" lang="ru" dir="ltr">Числа</span><span class="tr" data-l="ar" lang="ar" dir="rtl">الأرقام</span><span class="tr" data-l="en" lang="en" dir="ltr">Numbers</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li></ul>
+      <div class="ex-text"><p><span class="s r-bg"><span class="chip">רקע</span>האצה Chlorella vulgaris משמשת לייצור מזון ודלק ביולוגי, ולכן חשוב לדעת באילו תנאים היא גדלה מהר.</span><span class="frame" translate="no">← <mark class="slot">[הנושא]</mark> חשוב משום ש<mark class="slot">[...]</mark>.</span> <span class="s r-what"><span class="chip">מה נבדק ואיפה</span>במחקר זה נבדקה השפעת צבע האור (אדום, כחול ולבן) והשפעת עוצמת האור (50, 100 ו-200 µmol) על קצב הגדילה שלה.</span><span class="frame" translate="no">← במחקר זה נבדקה השפעת <mark class="slot">[...]</mark> על <mark class="slot">[...]</mark>.</span> <span class="s r-treat"><span class="chip">טיפולים וחזרות</span>תרביות של האצה גודלו במשך 15 ימים, בשלוש חזרות לכל טיפול, והצפיפות האופטית שלהן נמדדה ארבע פעמים.</span><span class="frame" translate="no">← <mark class="slot">[הצמחים / הדגימות]</mark> חולקו ל<mark class="slot">[מספר]</mark> טיפולים, עם <mark class="slot">[מספר]</mark> חזרות לכל טיפול, במשך <mark class="slot">[...]</mark>.</span> <span class="s r-num"><span class="chip">מספרים</span>נמצא שביום 15 הצפיפות האופטית באור האדום הייתה גבוהה ב-24% מאשר באור הכחול. כשעוצמת האור עלתה מ-50 ל-100 µmol הגדילה כמעט הוכפלה, ומעל 100 µmol היא לא עלתה עוד.</span><span class="frame" translate="no">← נמצא ש<mark class="slot">[...]</mark> (<mark class="slot">[מספר ויחידות]</mark>).</span> <span class="s r-found"><span class="chip">מה נמצא</span>מכאן שאור אדום מתאים לגידול הכלורלה יותר מאור כחול, ושיש עוצמת אור שמעליה אין טעם להגביר את התאורה.</span><span class="frame" translate="no">← מכאן ש<mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> בעבודה שלי אני אבדוק איך אור משפיע על אצות. אני אספר על הניסוי ועל מה שיצא.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li>התקציר נכתב <strong>בסוף</strong>, בזמן עבר: מה נעשה ומה נמצא. לא &quot;אני אבדוק&quot;.</li><li>שתי השאלות מופיעות, ולכל אחת התוצאה העיקרית עם מספר.</li><li>נוספה מסקנה במשפט אחד.</li></ul>
+      </details>
+    </div><div class="ex-panel" data-ex="agriculture">
+      <h4>השפעת אחוז הקומפוסט במצע על יבול החסה</h4>
+      <ul class="legend"><li class="r-bg">רקע<span class="tr" data-l="ru" lang="ru" dir="ltr">Контекст</span><span class="tr" data-l="ar" lang="ar" dir="rtl">خلفية</span><span class="tr" data-l="en" lang="en" dir="ltr">Background</span></li><li class="r-what">מה נבדק ואיפה<span class="tr" data-l="ru" lang="ru" dir="ltr">Что и где изучали</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ماذا دُرس وأين</span><span class="tr" data-l="en" lang="en" dir="ltr">What was studied, where</span></li><li class="r-treat">טיפולים וחזרות<span class="tr" data-l="ru" lang="ru" dir="ltr">Варианты и повторности</span><span class="tr" data-l="ar" lang="ar" dir="rtl">المعاملات والمكررات</span><span class="tr" data-l="en" lang="en" dir="ltr">Treatments and replicates</span></li><li class="r-num">מספרים<span class="tr" data-l="ru" lang="ru" dir="ltr">Числа</span><span class="tr" data-l="ar" lang="ar" dir="rtl">الأرقام</span><span class="tr" data-l="en" lang="en" dir="ltr">Numbers</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li></ul>
+      <div class="ex-text"><p><span class="s r-bg"><span class="chip">רקע</span>קומפוסט הוא דשן אורגני שמיוצר מפסולת, ושימוש בו יכול להפחית את השימוש בדשנים כימיים.</span><span class="frame" translate="no">← <mark class="slot">[הנושא]</mark> חשוב משום ש<mark class="slot">[...]</mark>.</span> <span class="s r-what"><span class="chip">מה נבדק ואיפה</span>במחקר זה נבדקה השפעת אחוז הקומפוסט במצע (0%, 20% ו-40%) והשפעת כמות ההשקיה (100 ו-200 מ״ל ביום) על היבול של חסה.</span><span class="frame" translate="no">← במחקר זה נבדקה השפעת <mark class="slot">[...]</mark> על <mark class="slot">[...]</mark>.</span> <span class="s r-treat"><span class="chip">טיפולים וחזרות</span>שתילי חסה גודלו בחממה במשך שישה שבועות, 8 צמחים בכל טיפול, ובסוף כל ניסוי נשקל המשקל הטרי שלהם.</span><span class="frame" translate="no">← <mark class="slot">[הצמחים / הדגימות]</mark> חולקו ל<mark class="slot">[מספר]</mark> טיפולים, עם <mark class="slot">[מספר]</mark> חזרות לכל טיפול, במשך <mark class="slot">[...]</mark>.</span> <span class="s r-num"><span class="chip">מספרים</span>נמצא ש-20% קומפוסט העלו את המשקל הטרי ב-39% לעומת הביקורת (p &lt; 0.001), ו-40% לא העלו אותו יותר. כשההשקיה הופחתה בחצי, היבול ירד ב-31% במצע בלי קומפוסט, ורק ב-14% במצע עם קומפוסט.</span><span class="frame" translate="no">← נמצא ש<mark class="slot">[...]</mark> (<mark class="slot">[מספר ויחידות]</mark>).</span> <span class="s r-found"><span class="chip">מה נמצא</span>מכאן ש-20% קומפוסט מספיקים כדי להעלות את היבול, ושהקומפוסט מקטין את הנזק ממחסור במים.</span><span class="frame" translate="no">← מכאן ש<mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> בחרתי בנושא הזה כי אני אוהבת חקלאות. בדקתי קומפוסט והשקיה על חסה וזה עבד.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li>למה בחרתם בנושא שייך לרפלקציה. בתקציר כותבים למה הנושא <strong>חשוב</strong>.</li><li>שתי השאלות מופיעות, ולכל אחת התוצאה העיקרית עם מספר.</li><li>&quot;וזה עבד&quot; → מה נמצא, עם מספרים ומובהקות.</li></ul>
+      </details>
+    </div><div class="ex-panel" data-ex="chemistry">
+      <h4>השפעת הטמפרטורה על כמות ויטמין C במיץ תפוזים</h4>
+      <ul class="legend"><li class="r-bg">רקע<span class="tr" data-l="ru" lang="ru" dir="ltr">Контекст</span><span class="tr" data-l="ar" lang="ar" dir="rtl">خلفية</span><span class="tr" data-l="en" lang="en" dir="ltr">Background</span></li><li class="r-what">מה נבדק ואיפה<span class="tr" data-l="ru" lang="ru" dir="ltr">Что и где изучали</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ماذا دُرس وأين</span><span class="tr" data-l="en" lang="en" dir="ltr">What was studied, where</span></li><li class="r-treat">טיפולים וחזרות<span class="tr" data-l="ru" lang="ru" dir="ltr">Варианты и повторности</span><span class="tr" data-l="ar" lang="ar" dir="rtl">المعاملات والمكررات</span><span class="tr" data-l="en" lang="en" dir="ltr">Treatments and replicates</span></li><li class="r-num">מספרים<span class="tr" data-l="ru" lang="ru" dir="ltr">Числа</span><span class="tr" data-l="ar" lang="ar" dir="rtl">الأرقام</span><span class="tr" data-l="en" lang="en" dir="ltr">Numbers</span></li><li class="r-found">מה נמצא<span class="tr" data-l="ru" lang="ru" dir="ltr">Что обнаружено</span><span class="tr" data-l="ar" lang="ar" dir="rtl">ما الذي وُجد</span><span class="tr" data-l="en" lang="en" dir="ltr">What was found</span></li></ul>
+      <div class="ex-text"><p><span class="s r-bg"><span class="chip">רקע</span>ויטמין C חיוני לגוף האדם, והוא מתפרק בקלות בתהליכי עיבוד של מזון.</span><span class="frame" translate="no">← <mark class="slot">[הנושא]</mark> חשוב משום ש<mark class="slot">[...]</mark>.</span> <span class="s r-what"><span class="chip">מה נבדק ואיפה</span>במחקר זה נבדקה השפעת הטמפרטורה (25°C עד 100°C) והשפעת זמן החימום (10 עד 60 דקות) על כמות ויטמין C במיץ תפוזים.</span><span class="frame" translate="no">← במחקר זה נבדקה השפעת <mark class="slot">[...]</mark> על <mark class="slot">[...]</mark>.</span> <span class="s r-treat"><span class="chip">טיפולים וחזרות</span>כמות ויטמין C נקבעה בטיטרציה עם יוד, בשלוש חזרות לכל טיפול.</span> <span class="s r-num"><span class="chip">מספרים</span>כמות ויטמין C ירדה מ-48.2 מ״ג ל-100 מ״ל בטמפרטורת החדר ל-29.5 מ״ג ל-100 מ״ל אחרי 30 דקות ב-100°C, ירידה של 39%. ב-75°C הכמות ירדה ככל שזמן החימום התארך, ואחרי 60 דקות היא ירדה ב-36%.</span><span class="frame" translate="no">← נמצא ש<mark class="slot">[...]</mark> (<mark class="slot">[מספר ויחידות]</mark>).</span> <span class="s r-found"><span class="chip">מה נמצא</span>מכאן שהפירוק של ויטמין C תלוי גם בטמפרטורה וגם בזמן החימום.</span><span class="frame" translate="no">← מכאן ש<mark class="slot">[...]</mark>.</span> </p></div>
+      <details class="box"><summary>לפני ואחרי: ככה זה נראה בטיוטה הראשונה</summary>
+        <div class="before"><b>טיוטה ראשונה:</b> ויטמין C מאוד חשוב לבריאות (Smith, 2020). בעבודה בדקנו מה קורה לו.</div>
+        <p><strong>מה השתנה:</strong></p>
+        <ul class="changes"><li><strong>בכימיה לא כותבים הפניות בתקציר</strong>, ולכן (Smith, 2020) יצא.</li><li>שתי השאלות מופיעות, ולכל אחת התוצאה העיקרית עם מספר.</li><li>&quot;בדקנו מה קורה לו&quot; → מה נבדק, איך, ומה נמצא.</li></ul>
+      </details>
+    </div>
+  </div>
+  <p class="small muted">התרגומים בדף הזה נכתבו בעזרת בינה מלאכותית, ועוד לא נבדקו בידי דובר/ת השפה.</p>
+
+</div>
+
+<script>
+(() => {
+  const store = { get(k) { try { return localStorage.getItem(k); } catch { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch {} } };
+  // שפה
+  const setLang = l => {
+    if (l) document.body.dataset.lang = l; else delete document.body.dataset.lang;
+    document.querySelectorAll('#langBtns button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === (l || ''))));
+    store.set('gemer-lang', l || '');
+  };
+  document.getElementById('langBtns').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setLang(b.dataset.lang); });
+  setLang(store.get('gemer-lang') || '');
+  // העתקה
+  document.addEventListener('click', async e => {
+    const b = e.target.closest('.copy'); if (!b) return;
+    const text = b.dataset.text ?? document.getElementById(b.dataset.copy)?.innerText ?? '';
+    try { await navigator.clipboard.writeText(text); }
+    catch { const t = document.createElement('textarea'); t.value = text; document.body.appendChild(t); t.select(); try { document.execCommand('copy'); } catch {} t.remove(); }
+    const old = b.textContent; b.textContent = 'הועתק ✓'; b.classList.add('done');
+    setTimeout(() => { b.textContent = old; b.classList.remove('done'); }, 1500);
+  });
+  // מקצוע: פותח את הדוגמה של המקצוע בכל הקופסאות
+  const MAP = {"biology":"biology","agriculture":"agriculture","chemistry":"chemistry","physics":"biology","environment":"biology","cs":"biology"};
+  const qs = new URLSearchParams(location.search).get('subject');
+  const showEx = (box, id) => {
+    box.querySelectorAll('.ex-tabs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.ex === id)));
+    box.querySelectorAll('.ex-panel').forEach(p => p.hidden = p.dataset.ex !== id);
+  };
+  const first = MAP[qs] || 'biology';
+  document.querySelectorAll('.ex').forEach(box => {
+    showEx(box, first);
+    box.querySelector('.ex-tabs').addEventListener('click', e => { const b = e.target.closest('button'); if (b) showEx(box, b.dataset.ex); });
+    box.querySelectorAll('.ex-opts input').forEach(inp => inp.addEventListener('change', () => box.classList.toggle(inp.dataset.cls, inp.dataset.cls === 'hide-chips' ? !inp.checked : inp.checked)));
+  });
+  document.querySelectorAll('[data-subj-only]').forEach(el => el.hidden = el.dataset.subjOnly !== (qs || ''));
+  // קישור בין שני הדפים שומר על המקצוע
+  if (qs) document.querySelectorAll('a[data-keep-subject]').forEach(a => { const [u, h] = a.getAttribute('href').split('#'); a.href = u + '?subject=' + encodeURIComponent(qs) + (h ? '#' + h : ''); });
+  // חיפוש במילון
+  const q = document.getElementById('glossQ');
+  if (q) q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    document.querySelectorAll('#gloss tbody tr').forEach(tr => tr.hidden = v && !tr.textContent.toLowerCase().includes(v));
+  });
+})();
+</script>
+</body>
+</html>
